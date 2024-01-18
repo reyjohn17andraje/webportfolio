@@ -1,0 +1,284 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Montserrat', sans-serif;
+}
+
+p * {
+	font-family: 'Quicksand', sans-serif;
+}
+
+body {
+	background-color: #606c38;
+}
+
+#landing {
+	min-height: 20rem;
+	background-image: url(./images/heroimg.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center bottom;
+	background-attachment: fixed;
+	padding: 0;
+	margin: 0;
+	gap: 0;
+}
+
+.hero-container {
+	background-color: rgba(0, 0, 0, 0.5);
+	min-height: 100vh;
+}
+
+#hero-title, #hero-sub-title {
+	color: white;
+	font-size: 4em;
+	padding-top: 3rem;
+	padding-bottom: 3rem;
+}
+
+nav {
+	background-color: #606c38;
+}
+
+/* Found this syntax on my previous HTML activities */
+.navbar-nav a {
+    position: relative;
+    text-decoration: none;
+    color: #ffffff;
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar-nav a:hover {
+    color: #ffffff;
+}
+
+.navbar-nav a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #ffffff;
+    transition: width 0.3s ease-in-out;
+}
+
+.navbar-nav a:hover::after {
+    width: 100%;
+}
+
+#navigation-page > li {
+	padding-left: 1rem;
+	padding-right: 1rem;
+	padding: 0;
+	margin: 0;
+	gap: 0;
+}
+
+.about-me-page {
+	min-height: 100vh;
+    max-width: 100%;
+    margin: auto;
+    padding: 3rem;
+    background-color: #fefae0;
+    color: black;
+}
+
+.profile-image {
+    max-width: 100%;
+    height: auto;
+    box-shadow: 10px 10px #283618;
+}
+
+#aboutme {
+	min-height: 100vh;
+	padding: 0;
+	margin: 0;
+	gap: 0;
+}
+
+#aboutmeimg {
+	padding: 3rem;
+}
+
+#aboutme-quote{
+	padding: 3rem;
+}
+
+#quote-name {
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+}
+
+#projects {
+	min-height: 100vh;
+	padding: 0;
+	margin: 0;
+	gap: 0;
+	color: black;
+}
+
+#projects .my-projects {
+	min-height: 100vh;
+    max-width: 100%;
+    margin: auto;
+    padding: 3rem;
+    background-color: #283618;
+    color: white;
+}
+
+#projects img {
+	padding-top: 1rem;
+}
+
+#projects-desc {
+	margin-top: 2rem;
+	padding: 2rem;
+	box-shadow: 15px 15px #fefae0;
+}
+
+#projects .card {
+	box-shadow: 15px 15px #fefae0;
+	color: white;
+}
+
+#projects .card-body {
+	color: black;
+}
+
+#projects h5, #projects h6 {
+	text-align: center;
+}
+
+#projects p {
+	text-align: justify;
+}
+
+#tools {
+	min-height: 100vh;
+	padding: 0;
+	margin: 0;
+	gap: 0;
+    margin: auto;
+    padding: 3rem;
+    background-color: #dda15e;
+    color: white;
+}
+
+#front-end-tools {
+	color: black;
+}
+
+.card-deck {
+	padding: 1.5rem;
+}
+
+.my-tools {
+    margin: auto;
+	padding: 1rem;
+	color: black;
+}
+
+.card-img-top {
+	width: auto;
+	height: auto;
+	padding: 1rem;
+}
+
+.core-tools {
+	padding: 3rem;
+	margin: 5rem;
+}
+
+.core-tools{
+	padding: 1rem;
+	background-color: #fefae0;
+	box-shadow: 15px 15px #283618;
+}
+
+.other-tools {
+	padding: 1rem;
+	background-color: #fefae0;
+	box-shadow: 15px 15px #283618;
+}
+
+#contact {
+	min-height: 20rem;
+	background-image: url(./images/heroimg.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center bottom;
+	background-attachment: fixed;
+	color: white;
+	padding: 0;
+	margin: 0;
+	gap: 0;
+	margin-bottom: 3rem;
+}
+
+.my-contact {
+	background-color: rgba(0, 0, 0, 0.5);
+	min-height: 100vh;
+}
+
+.responsive-map{
+	overflow: hidden;
+	padding-bottom: 56.25%;
+	position: relative;
+	margin: 3rem;
+	height: 0;
+}
+
+.responsive-map iframe{
+	align-items: center;
+	justify-content: center;
+	left: 0;
+	top: 0;
+	height:100%;
+	width:100%;
+	position:absolute;
+}
+
+.logos {
+	justify-content: space-between;
+	margin: 3rem;
+}
+
+.logo {
+	padding-right: 1rem;
+	padding-left: 1rem;
+    width: 20%;
+    height: auto;
+    @media (min-width: 768px) {
+        padding: 1rem;
+		width: 15%;
+    }
+
+    @media (min-width: 992px) {
+        padding: 1rem;
+		width: 10%;
+    }
+
+    @media (min-width: 1200px) {
+        padding: 1rem;
+		width: 10%;
+    }
+}
+
+footer {
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	background-color: #606c38;
+  	width: 100%;
+  	padding: 0.5rem;
+  	margin: 0;
+}

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous"/>
+
+	<link rel="stylesheet" type="text/css" href="./style.css">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+	<!-- Extra Additions -->
+	<script>
+		// From Bootstrap Documentation
+		$(document).ready(function(){
+			$('[data-toggle="tooltip"]').tooltip();   
+		});
+
+		function validateForm() {
+			var fullName = document.getElementById('full_name').value;
+			var contactNumber = document.getElementById('contact_number').value;
+			var email = document.getElementById('email').value;
+			var message = document.getElementById('message').value;
+
+			if (fullName.trim() === '') {
+				alert('Please enter your full name.');
+				return false;
+			}
+
+			if (contactNumber.trim() === '') {
+				alert('Please enter your contact number.');
+				return false;
+			}
+
+			if (email.trim() === '' || !validateEmail(email)) {
+				alert('Please enter a valid email address.');
+				return false;
+			}
+
+			if (message.trim() === '') {
+				alert('Please enter your message.');
+				return false;
+			}
+
+			return true;
+		}
+
+		function validateEmail(email) {
+			var emailRegex = /\S+@\S+\.\S+/;
+			return emailRegex.test(email);
+		}
+
+		// Not working with the modal
+		function openModel() {
+			if (validateForm()) {
+				$('#modalDiv').modal('show');
+			}
+			else {
+				$('#modalDiv').modal('hide');
+			}
+		}
+
+		// Tried to find a solution on the net
+		function closeNavbar() {
+	        $('.navbar-collapse').collapse('hide');
+	    }
+		</script>
+
+		<title>My Personal Website</title>
+	</head>
+	<body>
+		<section id="landing" class="container-fluid">
+			<div class="hero-container d-flex flex-column align-items-center justify-content-center">
+				<h1 id="hero-title" class="d-flex flex-row justify-content-center">Hi, I'm Rey</h1>
+				<h2 class="border border-bottom border-light w-75"></h2>
+				<h4 id="hero-sub-title" class="d-flex flex-row justify-content-center text-center">A Full-Stack Web Developer</h4>
+			</div>
+		</section>
+
+		<header id="navigation-page" class="container-fluid">
+			<div class="nav justify-content-center">
+				<nav id="navigation" class="navbar navbar-expand-lg navbar-dark justify-content-center align-items-center fixed-top">
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse justify-content-center align-items-center" id="navbarNav">
+						<ul class="navbar-nav justify-content-center align-items-center">
+							<li class="nav-item">
+								<a class="nav-link" href="#landing" onclick="closeNavbar()">Home</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#aboutme" onclick="closeNavbar()">About Me</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#projects" onclick="closeNavbar()">Projects</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#tools" onclick="closeNavbar()">Tools</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#contact" onclick="closeNavbar()">Contact</a>
+							</li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+		</header>
+
+		<section id="aboutme" class="container-fluid">
+			<div class="about-me-page">
+				<div class="row text-center align-items-center">
+					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 order-md-1 order-lg-1 order-xl-1 order-sm-1 order-col-xs-1" id="about-me-title">
+						<h2 id="about-title"><strong>About Me</strong></h2>
+						<h2 class="border border-bottom border-dark w-100 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 order-md-2 order-lg-2 order-xl-2 order-sm-2 order-col-xs-2"></h2>
+					</div>
+					<div class="col-md-6 order-xl-1 order-md-1 order-lg-1 order-sm-1 order-col-xs-1" id="aboutmeimg">
+						<img src="./images/aboutmeimg.jpg" alt="Profile Image" class="profile-image img-fluid">
+					</div>
+					<div class="col-md-6 order-lg-2 order-xl-2 order-md-2 order-sm-2 order-col-xs-2">
+						<h1 class="mt-3"><strong>Rey John Andraje</strong></h1>
+						<h6><em>Full-Stack Web Developer</em></h6>
+					</div>
+					<div class="col-md-6 order-md-4 order-lg-4 order-sm-3 order-col-xs-3" id="aboutmeimg">
+						<img src="./images/aboutmeimg2.jpg" alt="Profile Image" class="profile-image img-fluid">
+					</div>
+					<div class="col-md-6 order-md-3 order-lg-3 order-sm-4 order-col-xs-4">
+						<p class=" text-justify">I'm a dynamic full-stack web developer passionate about translating ideas into captivating digital experiences. Proficient in HTML5, Bootstrap, and JavaScript for front-end development, I create responsive interfaces. On the back-end, my expertise lies in Node.js, Express.js, and database management systems like MySQL and MongoDB. Committed to staying ahead in the field, I'm dedicated to delivering high-quality, maintainable code that meets user needs and business goals. I thrive in collaborative environments, possessing excellent communication skills to convey complex technical concepts. With a problem-solving mindset and an eye for detail, I'm eager to contribute my skills to your team and help bring innovative projects to life. Let's build something extraordinary together!</p>
+					</div>
+					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 order-md-5 order-lg-5 order-xl-5 order-sm-4 order-col-xs-4" id="aboutme-quote">
+						<h1 id="quote"><em>“Most of the important things in the world have been accomplished by people who have kept on trying when there seemed to be no hope at all.”</em></h1>
+						<h5 id="quote-name"><strong>~ Dale Carnegie ~</strong></h5>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="projects">
+			<div class="my-projects">
+				<div class="text-center align-items-center justify-content-center">
+					<h2 id="project-title"><strong>My Projects</strong></h2>
+					<h2 class="border border-bottom border-light w-100 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12"></h2>
+					<div class="card-deck my-5">
+						<div class="card">
+							<img src="./images/webdesign.jpg" class="card-img-top img-fluid" alt="Web-page Designing">
+							<div class="card-body">
+								<h5 class="card-title">Web-page Designing</h5>
+								<h6 class="text-muted">Front-End Programming</h6>
+								<p class="card-text">Starting my latest front-end project was like entering a place where creativity and making things work went hand in hand. I worked on designing a good-looking webpage using HTML5, CSS3, and a bit of Bootstrap. From planning how it looked to adding interactive parts, that project was where I got to make a website that was easy for people to use and looked nice too.</p>
+							</div>
+						</div>
+						<div class="w-100 d-none d-sm-block d-md-block d-lg-block d-xl-none py-3"></div>
+						<div class="card">
+							<img src="./images/ecommerce.jpg" class="card-img-top img-fluid" alt="E-Commerce">
+							<div class="card-body">
+								<h5 class="card-title">E-Commerce</h5>
+								<h6 class="text-muted">Back-End Pogramming</h6>
+								<p class="card-text">I worked on a fun project to make an online store. I focused on the behind-the-scenes part, called back-end programming. I used things like Node.js or Django to build a strong and safe system. It handled things like making sure people are who they say they are, keeping track of products, and managing orders. My goal was to make a website that's easy for people to use, keeps their info safe, and makes it simple to manage what we're selling and what customers are doing.</p>
+							</div>
+						</div>
+						<div class="w-100 d-none d-sm-block d-md-block d-lg-block d-xl-none py-3"></div>
+						<div class="card">
+							<img src="./images/ecommerceapi.png" class="card-img-top img-fluid" alt="E-Commerce API">
+							<div class="card-body">
+								<h5 class="card-title">E-Commerce API</h5>
+								<h6 class="text-muted">Full-Stack</h6>
+								<p class="card-text">In my recent full-stack programming project, I created a strong e-commerce API to support a complete online shopping website. The API, following RESTful principles, smoothly connected the front-end and back-end, making it easy to get and manage product information. Prioritizing scalability and security, the e-commerce API ensured a user-friendly shopping experience and was designed to handle future growth and additional features..</p>
+							</div>
+						</div>
+					</div>
+					<div id="projects-desc" class="border text-center py-5 mb-5">
+						<p><em>As a website developer, I take pride in showcasing a diverse portfolio of projects that reflect my passion for creating unique and functional digital experiences. From responsive and user-friendly designs to robust backend functionalities, each project I undertake is a testament to my commitment to excellence in web development. Explore my portfolio to witness the seamless integration of creativity and technology, aimed at delivering impactful solutions tailored to the specific needs of my clients.</em></p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="tools" class="container-fluid">
+			<div class="my-tools">
+				<div class="row text-center align-items-center justify-content-center">
+					<h2 id="front-end-tools"><strong>Programming Tools</strong></h2>
+					<h2 class="border border-bottom border-dark w-100 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12"></h2>
+					<div class="core-tools">
+						<h3>Core Tools</h3>
+						<div id="core-tools" class="d-flex flex-column">
+							<div id="html" class="d-flex flex-row justify-content-center">
+								<a href="https://www.w3schools.com/html/" data-toggle="tooltip" target="_blank" title="HTML"><img width="150" src="images/logo-html5.png" class="img-fluid"/></a>
+							</div>
+							<div id="css-js" class="d-flex flex-row justify-content-center">
+								<a href="https://www.tutorialspoint.com/css/css3_tutorial.htm#:~:text=Cascading%20Style%20Sheets%20(CSS)%20is,Media%20Queries" data-toggle="tooltip" target="_blank" title="CSS3"><img width="150" src="images/logo-css3.png" class="img-fluid"/></a>
+								<a href="https://www.w3schools.com/js/" data-toggle="tooltip" target="_blank" title="JavaScript"><img width="150" src="images/logo-javascript.png" class="img-fluid"/></a>
+							</div>
+						</div>
+						<h3 class="text-center mt-5">Other Tools</h3>
+						<div id="other-tools" class="d-flex flex-md-column">
+							<div id="tools-1" class="d-md-flex flex-md-row justify-content-center">
+								<a href="https://www.mongodb.com" data-toggle="tooltip" target="_blank" title="MongoDB"><img width="150" src="images/logo-mongodb.png" class="img-fluid"/></a>
+								<a href="https://www.w3schools.com/nodejs/nodejs_intro.asp" data-toggle="tooltip" target="_blank" title="Node.js"><img width="150" src="images/logo-nodejs.png" class="img-fluid"/></a>
+								<a href="https://expressjs.com" data-toggle="tooltip" target="_blank" title="Express.js"><img width="150" src="images/logo-expressjs.png" class="img-fluid"/></a>
+								<a href="https://react.dev" data-toggle="tooltip" target="_blank" title="React.js"><img width="150" src="images/logo-react.png" class="img-fluid"/></a>
+								<a href="https://www.heroku.com" data-toggle="tooltip" target="_blank" title="Heroku"><img width="150" src="images/logo-heroku.png" class="img-fluid"/></a>
+							</div>
+							<div id="tools-2" class="d-md-flex flex-md-row justify-content-center"></a>
+								<a href="https://git-scm.com" data-toggle="tooltip" target="_blank" title="Git"><img width="150" src="images/logo-git.png" class="img-fluid"/></a>
+								<a href="https://www.sublimetext.com" data-toggle="tooltip" target="_blank" title="Sublime Text"><img width="150" src="images/logo-sublime-text-3.png" class="img-fluid"/></a>
+								<a href="https://www.postman.com" data-toggle="tooltip" target="_blank" title="Postman"><img width="150" src="images/logo-postman.png" class="img-fluid"/></a>
+								<a href="https://about.gitlab.com" data-toggle="tooltip" target="_blank" title="GitLab"><img width="150" src="images/logo-gitlab-ci-cd.png" class="img-fluid"/></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="contact" class="container-fluid">
+			<div class="my-contact align-items-center justify-content-center">
+				<div class="container text-center pt-5">
+					<h2 id="contact-title"><strong>Contact me</strong></h2>
+					<h2 class="border border-bottom border-dark w-100 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12"></h2>
+					<div class="logos">
+						<a href="https://www.facebook.com" target="_blank"  data-toggle="tooltip" title="Facebook"><img src="./images/facebook_logo.png" alt="Facebook Logo" class="img-fluid logo"></a>
+						<a href="https://gitlab.com" target="_blank" data-toggle="tooltip" title="GitLab"><img src="./images/gitlab_logo.png" alt="GitLab Logo"class="img-fluid logo"></a>
+						<a href="https://www.linkedin.com" target="_blank" data-toggle="tooltip" title="LinkedIn"><img src="./images/linkedin_logo.png" alt="LinkedIn Logo" class="img-fluid logo"></a>
+						<a href="https://github.com" target="_blank" data-toggle="tooltip" title="GitHub"><img src="./images/github_logo.png" alt="GitHub Logo" class="img-fluid logo"></a>
+					</div>
+					<div class="row">
+						<div class="col-md-6 col-sm-12">
+							<div id="contact-header">
+								<div id="contact-form">
+									<form>
+										<div class="form-group">
+											<label for="full_name">Full name</label>
+											<input type="text" class="form-control" id="full_name" placeholder="Juan Dela Cruz" required>
+										</div>
+										<div class="form-group">
+											<label for="contact_number">Contact number</label>
+											<input type="tel" class="form-control" id="contact_number" placeholder="+63 942 802 9543" required>
+										</div>
+										<div class="form-group">
+											<label for="email">Email address</label>
+											<input type="email" class="form-control" id="email" placeholder="juandelacruz@gmail.com" required>
+										</div>
+										<div class="form-group">
+											<label for="message">Message</label>
+											<textarea class="form-control" id="message" rows="3" placeholder="Enter your message here." required></textarea>
+										</div>
+										<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalDiv" value="Submit" onClick="openModel()">Submit</button>
+										<button type="reset" value="Reset" class="btn btn-danger">Reset</button>
+									</form>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6 col-sm-12">
+							<div class="responsive-map">
+								<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3860.1373673030953!2d120.94870121231372!3d14.64814268578475!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b5afb225544d%3A0x57353fe1c4768165!2s438%20M.%20Naval%20St%2C%20Navotas%2C%20Metro%20Manila!5e0!3m2!1sen!2sph!4v1705548734636!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal fade" id="modalDiv" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title text-dark" id="ModalLabel">Thank you for contacting me!</h5>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div class="modal-body text-dark" id="modal-result">
+								Message Successfully Sent
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<footer class="footer fixed-bottom mt-auto py-3">
+			<div class="container-fluid container-footer d-flex align-items-center justify-content-center">
+				<span class="text-light mr-3">Rey John Andraje</span>
+				<span class="text-light mr-3">|</span>
+				<span class="text-light">© All Rights Reserved 2024</span>
+			</div>
+		</footer>
+
+		<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+	</body>
+	</html>
